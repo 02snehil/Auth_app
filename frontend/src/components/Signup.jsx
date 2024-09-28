@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import backgroundImage from '../assets/signup.jpg';
+
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -45,8 +47,12 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <div
+      className="flex flex-col mt-0.5 items-center justify-center w-full min-h-screen  bg-cover bg-center"
+      style={{ backgroundImage: `url(${backgroundImage})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
+    >
+    
+      <div className="bg-white  bg-opacity-50  p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6">Sign Up</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -106,6 +112,7 @@ const Signup = () => {
         </form>
       </div>
     </div>
+   
   );
 };
 
